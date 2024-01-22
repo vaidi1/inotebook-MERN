@@ -22,7 +22,7 @@ const Notes = () => {
 
     const handleClick = (e)=>{
       console.log("updating note..", note)
-      editNote(note.id, note.edescription, note.etitle, note.etag)
+      editNote(note.id, note.etitle, note.edescription, note.etag)
       refClose.current.click();
   }
 
