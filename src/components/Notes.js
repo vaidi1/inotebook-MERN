@@ -158,11 +158,13 @@ const Notes = (props) => {
         <div className="container mx-2">
           {notes.length === 0 && "No notes to display"}
         </div>
-        {notes.map((note) => {
-          return (
-            <Noteitem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note} />
-          );
-        })}
+        {
+          notes?.isArray() && notes?.map((note) => {
+            return (
+              <Noteitem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note} />
+            );
+          })
+        }
       </div>
     </>
   );
